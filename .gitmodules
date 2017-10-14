@@ -1,0 +1,3 @@
+[submodule "prometh-website"]
+	path = prometh-website
+	url = git@github.com:willdavidc/prometh-website.git
