@@ -8,10 +8,15 @@ contract agent {
         contractAddress = _contractAddress;
     }
     
-    function getStats() constant public returns (uint128, uint128);
+    function getStats() constant public returns (uint128, uint128)
+    {
+        return (0, 0);
+    }
     
-    function executeContract() public;
-    
+    function executeContract() public
+    {
+        return;
+    }
 }
 
 contract prometh {
@@ -51,9 +56,10 @@ contract prometh {
 contract prometheus {
 	address[] public promeths;
 
-	function createPrometh(address _contractAddress) public {
+	function createPrometh(address _contractAddress) public returns (address) {
 		prometh newPrometh = new prometh(_contractAddress);
 		promeths.push(newPrometh);
+		return newPrometh;
 	}
 	
 }
