@@ -1,0 +1,34 @@
+{
+  "contract_name": "agent",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "promethExecute",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "promethCost",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint128"
+        },
+        {
+          "name": "",
+          "type": "uint128"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60cc8061001e6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416634686030f81146046578063b478886d146058575b600080fd5b3415605057600080fd5b60566095565b005b3415606257600080fd5b60686098565b6040516fffffffffffffffffffffffffffffffff9283168152911660208201526040908101905180910390f35b5b565b6000805b90915600a165627a7a72305820d6e081f26b4e140557e806d63c3ac0ded7aeb606431622d1c4d5fa063955362a0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1508016217854
+}

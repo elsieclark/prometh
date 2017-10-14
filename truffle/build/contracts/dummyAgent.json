@@ -1,0 +1,171 @@
+{
+  "contract_name": "dummyAgent",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "gasCost",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint128"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "reward",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint128"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "promethExecute",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_gasCost",
+          "type": "uint128"
+        }
+      ],
+      "name": "setGasCost",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_reward",
+          "type": "uint128"
+        }
+      ],
+      "name": "setReward",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "gasCalled",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "promethCost",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint128"
+        },
+        {
+          "name": "",
+          "type": "uint128"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b600080555b5b61027d806100256000396000f300606060405236156100805763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631d5e3fe58114610085578063228cb733146100b45780634686030f146100e3578063669541d6146100f857806375643e1f146101195780637be6c7fd1461013a578063b478886d1461015f575b600080fd5b341561009057600080fd5b610098610196565b6040516001608060020a03909116815260200160405180910390f35b34156100bf57600080fd5b6100986101a5565b6040516001608060020a03909116815260200160405180910390f35b34156100ee57600080fd5b6100f66101c8565b005b341561010357600080fd5b6100f66001608060020a03600435166101cf565b005b341561012457600080fd5b6100f66001608060020a03600435166101f7565b005b341561014557600080fd5b61014d610222565b60405190815260200160405180910390f35b341561016a57600080fd5b610172610228565b6040516001608060020a039283168152911660208201526040908101905180910390f35b6000546001608060020a031681565b60005470010000000000000000000000000000000090046001608060020a031681565b5a6001555b565b600080546fffffffffffffffffffffffffffffffff19166001608060020a0383161790555b50565b600080546001608060020a038084167001000000000000000000000000000000000291161790555b50565b60015481565b6000546001608060020a03808216917001000000000000000000000000000000009004165b90915600a165627a7a7230582011d951b991dcf2a63be6af25ad174b23523a3df5f2a4d02972a61e21a2eacc1f0029",
+  "networks": {
+    "1508002938156": {
+      "events": {},
+      "links": {},
+      "address": "0x9412109ec1956f9a6a836f9a04d6fc3bea31a9a0",
+      "updated_at": 1508002947348
+    },
+    "1508004914404": {
+      "events": {},
+      "links": {},
+      "address": "0x621864bfea7423a47710bc4bd556390379b92d3c",
+      "updated_at": 1508004917810
+    },
+    "1508005422028": {
+      "events": {},
+      "links": {},
+      "address": "0xd98c1587e5709ade6ee01dafc32899c2b473006a",
+      "updated_at": 1508005431122
+    },
+    "1508007881389": {
+      "events": {},
+      "links": {},
+      "address": "0x76ef42d9c39711941345ede05d4e435a5509e3f2",
+      "updated_at": 1508007997206
+    },
+    "1508009291705": {
+      "events": {},
+      "links": {},
+      "address": "0x14e8bfc5e0d77ff0cafdbec432d2b0f2b12ec345",
+      "updated_at": 1508009343889
+    },
+    "1508009765441": {
+      "events": {},
+      "links": {},
+      "address": "0xf629880af2c04a8e6853e73885f0fc22c81c48e3",
+      "updated_at": 1508009779508
+    },
+    "1508011354119": {
+      "events": {},
+      "links": {},
+      "address": "0x02e041c6feeb45b7ef0b7c5981c5ddae5fead152",
+      "updated_at": 1508011367396
+    },
+    "1508012988584": {
+      "events": {},
+      "links": {},
+      "address": "0x09ffd3289ccb07e960979497c3050df174785ed2",
+      "updated_at": 1508013106368
+    },
+    "1508014165878": {
+      "events": {},
+      "links": {},
+      "address": "0xf796cf3288e0cd4e878c8eff526bf0da6bfe63fe",
+      "updated_at": 1508014185064
+    },
+    "1508015782528": {
+      "events": {},
+      "links": {},
+      "address": "0x516f38eb4706d5920a7cfa01b5216e0209d4b528",
+      "updated_at": 1508015797212
+    },
+    "1508016208628": {
+      "events": {},
+      "links": {},
+      "address": "0x1218eb924d11d611b64b898b18cdc117739ed978",
+      "updated_at": 1508016221219
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1508016221219
+}
