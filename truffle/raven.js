@@ -1,35 +1,56 @@
 
 var prometh;
 var agent;
+var promethCount;
 
-var prometheusAccount = '0x90c781b9baaefc8755d7e25ee6bc7a728386d10e'
-var receiverAccount = '0x298be9e1247499e2071714cefdf24ba1cd0f19be'
+var prometheusAccount = '0x7b5f242c2a59560c589e065d24729be5ce680f22'
+var receiverAccount = '0x541f0c9a2091a8f2d26e91631a14e5bb83674965'
 var gasPrice = 20000000000
 
+var Web3 = require("web3")
+var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'))
+
+var prometheusABI = require("./build/contracts/prometheus.json").abi
+var promethABI = require("./build/contracts/prometh.json").abi
+var agentABI = require("./build/contracts/dummyAgent.json").abi
+
+var prometheus = new web3.eth.Contract(prometheusABI, prometheusAccount)
+
 module.exports = () => {
-	let Web3 = require("web3")
+	prometheus.methods.promethCount().call().then(storePromethCount)
 
-	let web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'))
+	setTimeout(function(){ flyRaven(0) }, 1000)
+}
 
-	let prometheusABI = require("./build/contracts/prometheus.json").abi
-	let promethABI = require("./build/contracts/prometh.json").abi
-	let agentABI = require("./build/contracts/dummyAgent.json").abi
-
-	prometheus = new web3.eth.Contract(prometheusABI, prometheusAccount)
-
-	let promise = prometheus.methods.promeths(10).call()
+flyRaven = (iteration) => {
+	console.log("Iteration is: " + iteration)
+	if (iteration === 0)
+	{
+		console.log("Balance at start of cycle is:")
+		web3.eth.getBalance(receiverAccount).then(console.log)
+	}
+	let promise = prometheus.methods.promeths(iteration).call()
 		.then((selectedPrometh) => {
 			prometh = new web3.eth.Contract(promethABI, selectedPrometh);
 			return prometh.methods.lookup().call()
 		})
 		.then((promethInfo) => {
 			console.log(promethInfo);
-			console.log("I am there");
-			if (promethInfo['1'] - promethInfo['0'] * gasPrice > 0)
-			{
-				console.log("I am in");
-				web3.eth.getBalance(prometh._address).then(console.log);
-				return prometh.methods.execute(200000, 5000000000000000).send({from: receiverAccount, gas: 200000})
-			}
-		}).catch((e) => { console.log('error:', e) });
+
+			return web3.eth.getBalance(prometh._address)
+				.then((balance) => {
+					if (promethInfo['1'] - promethInfo['0'] * gasPrice > 0 && balance >= promethInfo['1'])
+					{
+						console.log("Prometh reward at access time:");
+						web3.eth.getBalance(prometh._address).then(console.log);
+						return prometh.methods.execute(200000, 5000000000000000).send({from: receiverAccount, gas: 200000})
+					}
+				});
+		})
+		.then(setTimeout(function(){ flyRaven((iteration + 1) % promethCount) }, 1000));
+}
+
+storePromethCount = (count) => {
+	promethCount = count;
+	console.log(promethCount)
 }
