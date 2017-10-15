@@ -1,4 +1,3 @@
-
 var prometh;
 var agent;
 let Web3 = require("web3")
@@ -7,7 +6,7 @@ let web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'))
 var creatorAddress = '0x9d93ca2e43896cbbb0c128a0ac09add76919aea5'
 var prometheusAddress = '0x7b5f242c2a59560c589e065d24729be5ce680f22'
 var agentAddress = '0xfa4de4184feffd22de53a3c92ca8a05eb57f87fa'
-var amountToCreate = 20
+var amountToCreate = 10
 
 console.log("Balance at start of creations:")
 web3.eth.getBalance(creatorAddress).then(console.log);
